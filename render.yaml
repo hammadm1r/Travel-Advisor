@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: flask-tourism-recommender
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:10000
+    envVars:
+      - key: PORT
+        value: 10000
